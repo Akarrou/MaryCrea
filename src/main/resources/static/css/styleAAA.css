@@ -39,7 +39,7 @@ header{
     justify-content: left;
 }
 
-.mybtn {
+.btn {
     text-align: center;
     width: 120px;
     margin: 10px;
@@ -49,7 +49,7 @@ header{
     font-size: 16px;
     transition: all 0.3s ease 0s;
 }
-.mybtn:hover {
+.btn:hover {
     text-decoration: none;
     color: #fff;
     filter: brightness(110%);
@@ -449,6 +449,7 @@ input:focus {
     margin-bottom: 20px;
     margin-right: 15px;
     margin-left: 15px;
+    min-width: 300px;
 }
 
 .cadre-2 {

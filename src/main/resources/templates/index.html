@@ -4,14 +4,17 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"  href="css/footer.css">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>Mon blog</title>
 </head>
 <body>
 <header th:replace="header.html :: top"></header>
+
 <section class="mes_conviction">
-    <section class="content reveal">
+    <h1 th:text="${email}"></h1>
+    <section class="content">
         <div>
             <h2>Mes convictions</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur culpa distinctio, dolore
@@ -19,7 +22,7 @@
                 illo illum incidunt numquam odio perferendis, porro provident rem, repellat sapiente veniam! Alias
                 asperiores nobis temporibus?</p>
         </div>
-        <div class="conviction reveal1 ">
+        <div class="conviction">
             <img src="http://via.placeholder.com/540x260" alt="">
             <div>
                 <h3>Valeur</h3>
@@ -31,7 +34,7 @@
             </div>
 
         </div>
-        <div class="conviction reveal2 ">
+        <div class="conviction">
             <div>
                 <h3>Valeur</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dignissimos excepturi fugit in
@@ -59,76 +62,20 @@
         </div>
     </section>
 </section>
-
-<section class="mycontent reveal">
-    <div class="im  reveal-1">
-        <img src="images/yarn.jpg" alt="...">
-        <div class="centeredOnimg">
-            <h1>Des service personnalisées</h1>
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </h3>
-        </div>
+<section class="mes_services">
+    <div class="titre">
+        <h2>Mes services</h2>
+        <p>jdfsjdfsjdfsjdfsdfsdfsdfsdfsdf</p>
     </div>
-    <div class="titre reveal-2">
-        <h2>Mes Services</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut excepturi in, autem voluptatibus minima,
-            doloremque commodi aperiam illo quod at quasi sequi nam dolorum maiores? Dolore ipsum ut recusandae
-            officiis.</p>
-    </div>
-
-    <div class="cadre-1  reveal-2">
-        <img src="images/bateaux.jpg" alt="...">
+    <div class="carte">
+        <img src="http://via.placeholder.com/280x160" alt="">
         <h5 class="card-title">Réalisation accessoires pour enfants</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="" class="mybtn mybtn-link">Go00</a>
-    </div>
-    <div class="cadre-2  reveal-2">
-        <img src="images/yarn.jpg" alt="...">
-        <h5 class="card-title">Sur mesure</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="" class="mybtn mybtn-link">Go00</a>
-
-    </div>
-    <div class="cadre-3  reveal-2">
-        <img src="images/image3.png" alt="...">
-        <h5 class="card-title">Retouches</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="index.php?controller=Messervices&task=retouche" class="mybtn mybtn-link">Retouches</a>
-    </div>
-    <div class="cadre-4  reveal-3">
-        <img src="http://via.placeholder.com/200x100" alt="...">
-        <h5 class="card-title">Confection de vêtements adultes et enfants</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="" class="mybtn mybtn-link">Go00</a>
-    </div>
-    <div class="cadre-5 reveal-3">
-        <img src="http://via.placeholder.com/200x100" alt="...">
-        <h5 class="card-title">Cours de couture pour les enfants et adultes</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="" class="mybtn mybtn-link">Go00</a>
-    </div>
-    <div class="cadre-6 reveal-3">
-        <img src="http://via.placeholder.com/200x100" alt="...">
-        <h5 class="card-title">Ateliers de couture événementiels pour tous</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="" class="mybtn mybtn-link">Go00</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dignissimos excepturi fugit in
+            ipsa? qui unde voluptatum.</p>
+        <a class="btn btn-link" href="">Go00</a>
     </div>
 </section>
 <footer th:replace="footer.html :: foot"></footer>
-<script src="app.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

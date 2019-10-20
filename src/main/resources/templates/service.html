@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"  href="css/footer.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mes Services</title>
+</head>
+<body>
+<header th:replace="header.html :: top"></header>
+<h1>Mes Services</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aliquam amet aperiam autem cumque deleniti
+    dignissimos dolorum eius error est explicabo libero, molestias mollitia obcaecati omnis, perspiciatis possimus
+    quidem sed?</p>
+<div th:each="service: ${services}">
+    <img th:src="${service.image}"/>
+    <h3 th:text="${service.titre}"> </h3>
+    <p th:text="${service.resume}"></p>
+    <a class="btn btn-link" th:href="@{monservice(id=${service.id})}">lire la suite</a>
+
+</div>
+
+<footer th:replace="footer.html :: foot"></footer>
+
+</body>
+</html>

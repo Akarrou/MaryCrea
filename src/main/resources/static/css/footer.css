@@ -1,0 +1,26 @@
+.myfooter {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.myfooter a {
+    text-decoration: none;
+    color: #fff;
+}
+.myfooter a:hover {
+    color: #eafbb1;
+}
+.rose {
+    min-width: 300px;
+    background-color: #d990e6;
+    padding: 30px;
+}
+.rose-fonce {
+    padding: 30px;
+    background-color: #d47ee6;
+}
