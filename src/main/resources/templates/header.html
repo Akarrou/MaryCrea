@@ -3,14 +3,34 @@
 <head>
 
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
 <header class="nav" th:fragment="top">
-    <div class="nav_titre">MaryCrea</div>
-    <div class="nav_titre">Acceuil</div>
+    <div class="menu">
+        <span class="title">Sitename</span>
+        <input class="burger" type="checkbox">
+        <nav>
+            <input type="search" placeholder="Rechercher...">
+            <a href="#"><i class="material-icons">home</i>Home</a>
+            <a href="#"><i class="material-icons">directions_car</i>Product</a>
+            <a href="#"><i class="material-icons">drafts</i>Contact</a>
+            <a href="#"><i class="material-icons">face</i>Profile</a>
+        </nav>
+    </div>
+    <div class="menu-burger">
+        <div class="nav_logo">MaryCrea</div>
+        <div class="nav_logo">Burger</div>
+    </div>
+
+    <a class="nav_titre" href="/">Acceuil</a>
     <div class="nav_titre">Mes conviction</div>
+    <a class="nav_titre" href="/service">Mes Services</a>
+    <a class="nav_titre" href="/blog">Mes Articles</a>
+    <a class="nav_titre" href="/connexion">Connexion</a>
     <div class="nav_titre">Contact</div>
+
 </header>
 </body>
 </html>
