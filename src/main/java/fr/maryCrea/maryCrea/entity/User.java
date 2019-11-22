@@ -16,8 +16,17 @@ public class User {
     @Email(message = "Please, provide a valid Email")
     private String email;
     private String password;
+    private String role;
 
     public User() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Long getId() {
