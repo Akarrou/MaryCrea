@@ -29,7 +29,11 @@
     <a class="nav_titre" href="/service">Mes Services</a>
     <a class="nav_titre" href="/blog">Mes Articles</a>
     <a class="nav_titre" href="/connexion">Connexion</a>
-    <a class="nav_titre" href="/crudservice">Nouveau service</a>
+    <div th:unless="${session.user == null}">
+        <a class="nav_titre" href="/crudservice"  th:if="${session.user.role == 'admin'}" >Nouveau service</a>
+    </div>
+
+    <a class="nav_titre" th:text="${session.user.name}"th:unless="${session.user == null}" href="">Nom de l'utilisateur</a>
     <div class="nav_titre">Contact</div>
 
 </header>
