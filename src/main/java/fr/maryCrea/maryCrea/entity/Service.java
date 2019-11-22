@@ -1,12 +1,22 @@
-package fr.maryCrea.maryCrea.model;
+package fr.maryCrea.maryCrea.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Service {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titre;
     private String image;
     private String resume;
     private String detail;
+
+    public Service() {
+    }
 
     public Service(Long id, String titre, String image, String resume, String detail) {
         this.id = id;

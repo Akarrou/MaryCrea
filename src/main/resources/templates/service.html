@@ -21,10 +21,9 @@
     <h3 th:text="${service.titre}"> </h3>
     <p th:text="${service.resume}"></p>
     <a class="btn btn-link" th:href="@{monservice(id=${service.id})}">lire la suite</a>
-
+    <a class="btn btn-link" th:href="@{crudservice(id=${service.id})}">Modifier mon service</a>
+    <a class="btn btn-link" th:href="@{delete-service(id=${service.id})}">Supprimé mon service</a>
 </div>
-
 <footer th:replace="footer.html :: foot"></footer>
-
 </body>
 </html>

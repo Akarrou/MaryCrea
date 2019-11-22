@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Document</title>
+</head>
+<body>
+<header th:replace="header.html :: top"></header>
+<h3 th:text="${service.id} ? 'Edition Service' : 'Création Service'">Wizard</h3>
+<form method="post" th:action="@{/save-service}" th:object="${service}">
+    <input name="id" th:field="*{id}" type="hidden">
+    <label for="titre">Mon titre de service</label>
+    <input id="titre" name="titre" placeholder="Mon titre de service" required th:field="*{titre}" type="text">
+    <br><br>
+    <label for="image">Lien de mon image</label>
+    <input id="image" name="image" placeholder="Lien de mon image" required th:field="*{image}" type="text">
+    <br><br>
+    <label for="resume">Resumé de mon service</label>
+    <textarea id="resume" name="resume" placeholder="Resumé de mon service" required th:field="*{resume}" type="text"> </textarea>
+    <br><br>
+    <label for="detail">Le detail de mon service</label>
+    <textarea id="detail" name="titre" placeholder="Le detail de mon service" required th:field="*{detail}" type="text"></textarea>
+    <br><br>
+
+    <input class="btn btn-link" type="submit" value="Send">
+</form>
+
+<footer th:replace="footer.html :: foot"></footer>
+</body>
+</html>

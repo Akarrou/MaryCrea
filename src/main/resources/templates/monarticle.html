@@ -13,9 +13,9 @@
 </head>
 <body>
 <header th:replace="header.html :: top"></header>
-<h1 th:text="${articles.titreArticle}"> </h1>
-<img th:src="${articles.image}"/>
-<p th:text="${articles.article}"> </p>
+    <h1 th:text="${article.getTitreArticle()}"> </h1>
+    <img th:src="${article.image}"/>
+    <p th:text="${article.article}"> </p>
 <footer th:replace="footer.html :: foot"></footer>
 </body>
 </html>
