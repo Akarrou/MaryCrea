@@ -30,7 +30,7 @@ public class UserController {
     public String deconnection(HttpServletRequest request){
         HttpSession session =request.getSession();
         session.invalidate();
-        return "index";
+        return "redirect:/";
 
     }
 

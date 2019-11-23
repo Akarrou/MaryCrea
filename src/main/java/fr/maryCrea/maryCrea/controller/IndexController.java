@@ -36,7 +36,7 @@ public class IndexController {
         if (user != null) {
             if (user.getPassword().equals(passwordValue)) {
                 session.setAttribute("user", user);
-                return "index";
+                return "redirect:/";
             } else {
                 message = "Votre mot de passe est incorect";
             }
