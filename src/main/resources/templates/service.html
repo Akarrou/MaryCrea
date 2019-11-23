@@ -21,10 +21,11 @@
     <h3 th:text="${service.titre}"></h3>
     <p th:text="${service.resume}"></p>
     <a class="btn btn-link" th:href="@{monservice(id=${service.id})}">lire la suite</a>
+
     <div th:unless="${session.user == null}">
-        <a class="btn btn-link" th:href="@{crudservice(id=${service.id})}" th:if="${session.user.role == 'admin'}">Modifier
+        <a class="btn btn-link" th:if="${session.user.role == 'admin'}" th:href="@{crudservice(id=${service.id})}" >Modifier
             mon service</a>
-        <a class="btn btn-link" th:href="@{delete-service(id=${service.id})}" th:if="${session.user.role == 'admin'}">Supprimé
+        <a class="btn btn-link" th:if="${session.user.role == 'admin'}" th:href="@{delete-service(id=${service.id})}">Supprimé
             mon service</a>
     </div>
 </div>
