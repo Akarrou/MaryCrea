@@ -24,7 +24,7 @@ public class ArticleController {
     }
 
     @GetMapping("/monarticle")
-    public String monarticle(Model out,@RequestParam(name = "id",defaultValue = "1")Long id){
+    public String monArticle(Model out,@RequestParam(name = "id",defaultValue = "1")Long id){
         Article article = new Article();
         if (id != null) {
             Optional<Article> optionalArticle = repository.findById(id);
@@ -51,12 +51,12 @@ public class ArticleController {
     }
 
     @PostMapping("/save-article")
-    public String postWizard(@ModelAttribute Article article) {
+    public String postArticle(@ModelAttribute Article article) {
         repository.save(article);
         return "redirect:/blog";
     }
     @GetMapping("/delete-article")
-    public String deleteWizard(@RequestParam Long id) {
+    public String deleteArticle(@RequestParam Long id) {
         repository.deleteById(id);
         return "redirect:/blog";
     }
