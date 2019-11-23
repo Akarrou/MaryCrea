@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
-
 @Controller
 public class UserController {
     @Autowired
@@ -30,7 +29,7 @@ public class UserController {
     public String deconnection(HttpServletRequest request){
         HttpSession session =request.getSession();
         session.invalidate();
-        return "index";
+        return "redirect:/";
 
     }
 

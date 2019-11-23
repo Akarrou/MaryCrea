@@ -1,6 +1,5 @@
 package fr.maryCrea.maryCrea.controller;
 
-import fr.maryCrea.maryCrea.entity.Service;
 import fr.maryCrea.maryCrea.entity.User;
 import fr.maryCrea.maryCrea.repository.ServicesRepository;
 import fr.maryCrea.maryCrea.repository.UserRepository;
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -36,7 +34,7 @@ public class IndexController {
         if (user != null) {
             if (user.getPassword().equals(passwordValue)) {
                 session.setAttribute("user", user);
-                return "index";
+                return "redirect:/";
             } else {
                 message = "Votre mot de passe est incorect";
             }
@@ -44,5 +42,4 @@ public class IndexController {
         message = "Je vous connais pas";
         return "redirect:/connexion?message=" + message;
     }
-
 }
