@@ -13,13 +13,19 @@
 <body>
 <header th:replace="header.html :: top"></header>
 <h1>Mes articles</h1>
+
  <div th:each="article: ${articles}">
     <h1 th:text="${article.titreArticle}"> </h1>
-     <p th:text="${#dates.format(article.dateArticle, 'dd-MMMM-yyyy')}"></p>
+     <p th:text="${#temporals.format(article.dateArticle, 'dd MMMM yyyy HH:mm:ss')}"></p>
      <img th:src="${article.image}"/>
      <p th:text="${article.resume}"></p>
      <a class="btn btn-link" th:href="@{monarticle(id=${article.id})}">lire la suite</a>
-
+     <div th:unless="${session.user == null}">
+         <a class="btn btn-link" th:href="@{crudarticle(id=${article.id})}" th:if="${session.user.role == 'admin'}">Modifier
+             mon article</a>
+         <a class="btn btn-link" th:href="@{delete-article(id=${article.id})}" th:if="${session.user.role == 'admin'}">Supprimé
+             mon article</a>
+     </div>
 </div>
 
 <footer th:replace="footer.html :: foot"></footer>

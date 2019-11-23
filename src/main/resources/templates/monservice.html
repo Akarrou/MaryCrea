@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet"  href="css/footer.css">
+    <link rel="stylesheet" href="css/footer.css">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -14,10 +14,10 @@
 <body>
 <header th:replace="header.html :: top"></header>
 
-<h1 th:text="${service.titre}"> </h1>
+<a th:href="@{/service}">Retour a mes service</a>
+<h1 th:text="${service.titre}"></h1>
 <img th:src="${service.image}"/>
-<p th:text="${service.detail}"> </p>
-
+<p th:text="${service.detail}"></p>
 
 <footer th:replace="footer.html :: foot"></footer>
 </body>

@@ -1,9 +1,7 @@
 package fr.maryCrea.maryCrea.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 @Entity
 public class Article {
@@ -12,20 +10,12 @@ public class Article {
     private Long id;
     private String titreArticle;
     private String resume;
-    private String article;
+    private String detail;
     private String image;
-    private Date dateArticle;
+    private LocalDateTime dateArticle = LocalDateTime.now();
+
 
     public Article() {
-    }
-
-    public Article(Long id, String titreArticle, String resume, String article, String image, Date dateArticle) {
-        this.id = id;
-        this.titreArticle = titreArticle;
-        this.resume = resume;
-        this.article = article;
-        this.image = image;
-        this.dateArticle = dateArticle;
     }
 
     public Long getId() {
@@ -36,14 +26,6 @@ public class Article {
         this.id = id;
     }
 
-    public String getResume() {
-        return resume;
-    }
-
-    public void setResume(String resume) {
-        this.resume = resume;
-    }
-
     public String getTitreArticle() {
         return titreArticle;
     }
@@ -52,12 +34,20 @@ public class Article {
         this.titreArticle = titreArticle;
     }
 
-    public String getArticle() {
-        return article;
+    public String getResume() {
+        return resume;
     }
 
-    public void setArticle(String article) {
-        this.article = article;
+    public void setResume(String resume) {
+        this.resume = resume;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public String getImage() {
@@ -68,13 +58,11 @@ public class Article {
         this.image = image;
     }
 
-    public Date getDateArticle() {
+    public LocalDateTime getDateArticle() {
         return dateArticle;
     }
 
-    public void setDateArticle(Date dateArticle) {
+    public void setDateArticle(LocalDateTime dateArticle) {
         this.dateArticle = dateArticle;
     }
-
-
 }

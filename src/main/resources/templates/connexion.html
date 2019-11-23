@@ -14,6 +14,7 @@
 <body>
 <header th:replace="header.html :: top"></header>
 <form action="/index" method="Post">
+    <p th:text="${message}" ></p>
     <input type="email" name="email" placeholder="votre email">
     <input type="password" name="password">
     <input type="submit">

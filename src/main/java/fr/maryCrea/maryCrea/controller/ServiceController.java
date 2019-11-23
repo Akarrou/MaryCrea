@@ -2,7 +2,6 @@ package fr.maryCrea.maryCrea.controller;
 
 import fr.maryCrea.maryCrea.entity.Service;
 import fr.maryCrea.maryCrea.repository.ServicesRepository;
-import org.hibernate.validator.constraints.SafeHtml;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +39,7 @@ public class ServiceController {
     }
 
     @GetMapping("/crudservice")
-    public String CrudServices(Model out,@RequestParam(required = false) Long id){
+    public String crudServices(Model out,@RequestParam(required = false) Long id){
         Service service = new Service();
         if (id != null) {
             Optional<Service> optionalService = repository.findById(id);
@@ -54,12 +53,12 @@ public class ServiceController {
     }
 
     @PostMapping("/save-service")
-    public String postWizard(@ModelAttribute Service service) {
+    public String postService(@ModelAttribute Service service) {
         repository.save(service);
         return "redirect:/service";
     }
     @GetMapping("/delete-service")
-    public String deleteWizard(@RequestParam Long id) {
+    public String deleteService(@RequestParam Long id) {
         repository.deleteById(id);
         return "redirect:/service";
     }
