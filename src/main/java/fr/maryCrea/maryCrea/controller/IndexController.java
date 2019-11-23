@@ -16,9 +16,7 @@ public class IndexController {
     private User user;
 
     @PostMapping("/index")
-
-    public String home(
-            HttpSession session, @RequestParam(name = "email", required = false, defaultValue = "o") String emailValue,
+    public String home(HttpSession session, @RequestParam(name = "email", required = false, defaultValue = "o") String emailValue,
             @RequestParam(name = "password", required = false, defaultValue = "0") String passwordValue) {
         user = repository.findByEmail(emailValue);
         String message = "";

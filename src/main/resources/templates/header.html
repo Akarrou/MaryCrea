@@ -28,13 +28,22 @@
     <div class="nav_titre">Mes conviction</div>
     <a class="nav_titre" href="/service">Mes Services</a>
     <a class="nav_titre" href="/blog">Mes Articles</a>
-    <a class="nav_titre" href="/connexion">Connexion</a>
-    <div th:unless="${session.user == null}">
+    <a class="nav_titre" href="/connexion" th:if="${session.user == null}">Connexion</a>
+    <a class="nav_titre" href="/deconection" th:unless="${session.user == null}">Deconnexion</a>
+
+    <form method="POST" class="nav_titre"  th:if="${session.user == null}" th:action="@{/cruduser}">
+        <button  type="submit" name="submit">Inscription</button>
+    </form>
+    <div class="nav_titre" th:unless="${session.user == null}">
         <a class="nav_titre" href="/crudservice"  th:if="${session.user.role == 'admin'}" >Nouveau service</a>
         <a class="nav_titre" href="/crudarticle"  th:if="${session.user.role == 'admin'}" >Nouveau article</a>
     </div>
 
-    <a class="nav_titre" th:text="${session.user.name}"th:unless="${session.user == null}" href="">Nom de l'utilisateur</a>
+    <form method="POST" class="nav_titre" th:unless="${session.user == null}" th:action="@{/cruduser}">
+        <input type="hidden" name="id" id="id" th:value="${session.user.id}" />
+        <button  type="submit" name="submit" th:text="${session.user.name}">This is a link that sends a POST request</button>
+    </form>
+
     <div class="nav_titre">Contact</div>
 
 </header>

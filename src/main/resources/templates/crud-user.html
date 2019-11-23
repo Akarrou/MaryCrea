@@ -11,25 +11,29 @@
 </head>
 <body>
 <header th:replace="header.html :: top"></header>
-<h3 th:text="${article.id} ? 'Edition Article' : 'Création Article'">Wizard</h3>
-<form method="post" th:action="@{/save-article}" th:object="${article}">
-
-
+<h3 th:text="${user.id} ? 'Modification de mon compte' : 'Inscription'">Wizard</h3>
+<form method="post" th:action="@{/save-user}" th:object="${user}">
     <input name="id" th:field="*{id}" type="hidden">
-    <label for="titreArticle">Mon titre de article</label>
-    <input id="titreArticle" name="titreArticle" placeholder="Mon titre de service" required th:field="*{titreArticle}" type="text">
+    <label for="email">Mon email</label>
+    <input id="email" name="email" placeholder="Mon email" required th:field="*{email}" type="text">
     <br><br>
-    <label for="image">Lien de mon image</label>
-    <input id="image" name="image" placeholder="Lien de mon image" required th:field="*{image}" type="text">
+    <label for="name">Nom</label>
+    <input id="name" name="name" placeholder="Nom" required th:field="*{name}" type="text">
     <br><br>
-    <label for="resume">Resumé de mon article</label>
-    <textarea id="resume" name="resume" placeholder="Resumé de mon service" required th:field="*{resume}" type="text"> </textarea>
+    <label for="lastName">Prenom</label>
+    <input id="lastName" lastName="resume" placeholder="Prenom" required th:field="*{lastName}" type="text">
     <br><br>
-    <label for="detail">Le detail de mon article</label>
-    <textarea id="detail" name="detail" placeholder="Le detail de mon service" required th:field="*{detail}" type="text"></textarea>
+    <label for="password">Mot de passe</label>
+    <input id="password" name="password" placeholder="mot de passe" required th:field="*{password}" type="password">
     <br><br>
+    <label for="newsletter">Newsletter</label>
+    <input id="newsletter" name="newsletter" placeholder="Newsletter"  th:field="*{newsletter}" type="checkbox">
     <input class="btn btn-link" type="submit" value="Enregistre">
+</form>
 
+<form method="post"  th:action="@{/delete-user}"  th:unless="${session.user == null}">
+    <input type="hidden" name="id" id="id" th:value="${session.user.id}" />
+    <button  class="btn btn-link" type="submit" name="submit">Suprime mon compte</button>
 </form>
 
 <footer th:replace="footer.html :: foot"></footer>
