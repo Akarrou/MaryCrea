@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class ConnexionController {
+public class UserController {
 
     @GetMapping("/connexion")
     public String conect(Model out, @RequestParam(required = false) String message){

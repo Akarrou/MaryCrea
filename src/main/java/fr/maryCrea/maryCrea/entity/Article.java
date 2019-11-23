@@ -12,7 +12,7 @@ public class Article {
     private String resume;
     private String detail;
     private String image;
-    private LocalDateTime dateArticle = LocalDateTime.now();;
+    private LocalDateTime dateArticle = LocalDateTime.now();
 
 
     public Article() {

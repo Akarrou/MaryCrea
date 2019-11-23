@@ -1,7 +1,7 @@
 package fr.maryCrea.maryCrea.controller;
 
 import fr.maryCrea.maryCrea.entity.User;
-import fr.maryCrea.maryCrea.repository.ConnexionRepository;
+import fr.maryCrea.maryCrea.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
     @Autowired
-    private ConnexionRepository repository;
+    private UserRepository repository;
     private User user;
 
     @PostMapping("/index")

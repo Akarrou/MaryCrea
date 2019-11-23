@@ -36,7 +36,7 @@ public class ArticleController {
         return "monarticle";
     }
 
-    @GetMapping("/crudardicle")
+    @GetMapping("/crudarticle")
     public String crudArticle(Model out,@RequestParam(required = false) Long id){
         Article article = new Article();
         if (id != null) {

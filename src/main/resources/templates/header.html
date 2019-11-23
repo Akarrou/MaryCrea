@@ -31,7 +31,7 @@
     <a class="nav_titre" href="/connexion">Connexion</a>
     <div th:unless="${session.user == null}">
         <a class="nav_titre" href="/crudservice"  th:if="${session.user.role == 'admin'}" >Nouveau service</a>
-        <a class="nav_titre" href="/crudardicle"  th:if="${session.user.role == 'admin'}" >Nouveau article</a>
+        <a class="nav_titre" href="/crudarticle"  th:if="${session.user.role == 'admin'}" >Nouveau article</a>
     </div>
 
     <a class="nav_titre" th:text="${session.user.name}"th:unless="${session.user == null}" href="">Nom de l'utilisateur</a>
