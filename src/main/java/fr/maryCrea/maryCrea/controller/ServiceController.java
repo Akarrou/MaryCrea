@@ -2,7 +2,6 @@ package fr.maryCrea.maryCrea.controller;
 
 import fr.maryCrea.maryCrea.entity.Service;
 import fr.maryCrea.maryCrea.repository.ServicesRepository;
-import org.hibernate.validator.constraints.SafeHtml;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

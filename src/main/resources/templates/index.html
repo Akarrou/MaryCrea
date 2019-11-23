@@ -13,8 +13,7 @@
 <header th:replace="header.html :: top"></header>
 
 <section class="mes_conviction">
-    <h1 th:text="${username}"></h1>
-    <section class="content">
+       <section class="content">
         <div>
             <h2>Mes convictions</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur culpa distinctio, dolore
@@ -67,12 +66,12 @@
         <h2>Mes services</h2>
         <p>jdfsjdfsjdfsjdfsdfsdfsdfsdfsdf</p>
     </div>
-    <div class="carte">
-        <img src="http://via.placeholder.com/280x160" alt="">
-        <h5 class="card-title">Réalisation accessoires pour enfants</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dignissimos excepturi fugit in
-            ipsa? qui unde voluptatum.</p>
-        <a class="btn btn-link" href="">Go00</a>
+
+    <div class="carte"  th:each="service: ${services}">
+        <img th:src="${service.image}"/>
+        <h5 class="card-title" th:text="${service.titre}" >Réalisation accessoires pour enfants</h5>
+        <p th:text="${service.resume}"></p>
+        <a class="btn btn-link" th:href="@{monservice(id=${service.id})}">lire la suite</a>
     </div>
 </section>
 <footer th:replace="footer.html :: foot"></footer>
