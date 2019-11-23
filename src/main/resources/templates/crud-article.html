@@ -11,23 +11,25 @@
 </head>
 <body>
 <header th:replace="header.html :: top"></header>
-<h3 th:text="${service.id} ? 'Edition Service' : 'Création Service'">Wizard</h3>
-<form method="post" th:action="@{/save-service}" th:object="${service}">
+<h3 th:text="${article.id} ? 'Edition Article' : 'Création Article'">Wizard</h3>
+<form method="post" th:action="@{/save-article}" th:object="${article}">
+
+
     <input name="id" th:field="*{id}" type="hidden">
-    <label for="titre">Mon titre de service</label>
-    <input id="titre" name="titre" placeholder="Mon titre de service" required th:field="*{titre}" type="text">
+    <label for="titreArticle">Mon titre de article</label>
+    <input id="titreArticle" name="titreArticle" placeholder="Mon titre de service" required th:field="*{titreArticle}" type="text">
     <br><br>
     <label for="image">Lien de mon image</label>
     <input id="image" name="image" placeholder="Lien de mon image" required th:field="*{image}" type="text">
     <br><br>
-    <label for="resume">Resumé de mon service</label>
+    <label for="resume">Resumé de mon article</label>
     <textarea id="resume" name="resume" placeholder="Resumé de mon service" required th:field="*{resume}" type="text"> </textarea>
     <br><br>
-    <label for="detail">Le detail de mon service</label>
+    <label for="detail">Le detail de mon article</label>
     <textarea id="detail" name="detail" placeholder="Le detail de mon service" required th:field="*{detail}" type="text"></textarea>
     <br><br>
-
     <input class="btn btn-link" type="submit" value="Enregistre">
+
 </form>
 
 <footer th:replace="footer.html :: foot"></footer>

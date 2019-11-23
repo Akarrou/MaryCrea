@@ -13,12 +13,22 @@ public class User {
     private Long id;
     private String name;
     private String lastName;
+
     @Email(message = "Please, provide a valid Email")
     private String email;
     private String password;
-    private String role;
+    private String role = "visitor";
+    private Boolean newsletter;
 
     public User() {
+    }
+
+    public Boolean getNewsletter() {
+        return newsletter;
+    }
+
+    public void setNewsletter(Boolean newsletter) {
+        this.newsletter = newsletter;
     }
 
     public String getRole() {
