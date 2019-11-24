@@ -29,6 +29,30 @@
 
     <input class="btn btn-link" type="submit" value="Enregistre">
 </form>
+<form method="post" th:action="@{/cruddetailservice}">
+       <input type="hidden" name="idService" id="idService2" th:value="${service.id}"/>
+    <button class="btn btn-link" type="submit" name="submit">Ajouter un Detail Service</button>
+</form>
+
+<div th:each="detailService: ${detailServices}">
+    <img th:src="${detailService.image}"/>
+    <h3 th:text="${detailService.titre}"></h3>
+    <p th:text="${detailService.resume}"></p>
+
+    <form method="post" th:action="@{/cruddetailservice}">
+        <input type="hidden" name="idDetailService" th:value="${detailService.id}"/>
+        <input type="hidden" name="idService"  th:value="${service.id}"/>
+        <button class="btn btn-link" type="submit" name="submit">Modifier le Detail Service</button>
+    </form>
+
+    <form method="post" th:action="@{/delete-detailservice}">
+        <input type="hidden" name="id" th:value="${detailService.id}"/>
+        <input type="hidden" name="idService" th:value="${detailService.idService}"/>
+        <button class="btn btn-link" type="submit" name="submit">Supprimer le Detail Service</button>
+    </form>
+</div>
+</div>
+
 
 <footer th:replace="footer.html :: foot"></footer>
 </body>

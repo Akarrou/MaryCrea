@@ -14,10 +14,15 @@
 <body>
 <header th:replace="header.html :: top"></header>
 
-<a th:href="@{/service}">Retour a mes service</a>
-<h1 th:text="${service.titre}"></h1>
-<img th:src="${service.image}"/>
-<p th:text="${service.detail}"></p>
+<div th:each="detailService: ${detailServices}">
+    <img th:src="${detailService.image}"/>
+    <h3 th:text="${detailService.titre}"></h3>
+    <p th:text="${detailService.resume}"></p>
+
+</div>
+
+</div>
+
 
 <footer th:replace="footer.html :: foot"></footer>
 </body>

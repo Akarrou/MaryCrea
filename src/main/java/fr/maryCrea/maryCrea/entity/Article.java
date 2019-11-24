@@ -1,8 +1,10 @@
 package fr.maryCrea.maryCrea.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
+
 @Entity
 public class Article {
     @Id
